@@ -1,6 +1,6 @@
-import User from "../../models/pet.model";
+// CORREÇÃO 1: Importar o model correto (estava importando pet.model)
+import User from "../../models/user.model"; 
 import { Response, Request } from "express";
-
 
 const mockRepository = {
     find: jest.fn(),
@@ -40,10 +40,18 @@ describe('User With TypeORM Controller', () => {
 
     describe('getUsers', () => {
         it('should return a list of users', async () => {
-            const mockUsers: User[] = [
-                new User("user1", "pass1"),
-                new User("user2", "pass2")
-            ];
+            // CORREÇÃO 2: Criar instâncias e atribuir valores manualmente,
+            // pois a classe User não tem construtor com argumentos.
+            const user1 = new User();
+            user1.username = "user1";
+            user1.password = "pass1";
+
+            const user2 = new User();
+            user2.username = "user2";
+            user2.password = "pass2";
+
+            const mockUsers: User[] = [user1, user2];
+            
             mockRepository.find.mockResolvedValue(mockUsers);
 
             const { req, res } = mockRequestResponse();
@@ -57,7 +65,11 @@ describe('User With TypeORM Controller', () => {
 
     describe('getUserByUsername', () => {
         it('should return a user when found', async () => {
-            const mockUser = new User("testuser", "password");
+            // CORREÇÃO 2 (Repetição): Instanciação correta
+            const mockUser = new User();
+            mockUser.username = "testuser";
+            mockUser.password = "password";
+
             mockRepository.findOneBy.mockResolvedValue(mockUser);
 
             const { req, res } = mockRequestResponse({ params: { username: 'testuser' } });
@@ -82,6 +94,8 @@ describe('User With TypeORM Controller', () => {
         it('should create and return a new user', async () => {
             const newUser = { username: 'newuser', password: 'newpassword' };
             const savedUser = { id: 1, ...newUser };
+            
+            // Aqui usamos 'as User' para forçar a tipagem, o que é aceitável em mocks
             mockRepository.create.mockReturnValue(newUser as User);
             mockRepository.save.mockResolvedValue(savedUser);
 
