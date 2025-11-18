@@ -1,0 +1,14 @@
+import express from "express";
+import petController from "../controllers/pet.controller"; // Mudou
+import auth from "../middlewares/auth.middleware";
+
+const router = express.Router();
+
+// Parâmetro mudou de :id para :id_pet
+router.get("/:id_pet", auth.jwtAuthMiddleware, petController.getPet); 
+router.get("/", auth.jwtAuthMiddleware, petController.getPets);
+router.post("/", auth.jwtAuthMiddleware, petController.createPet);
+router.put("/:id_pet", auth.jwtAuthMiddleware, petController.updatePet);
+router.delete("/:id_pet", auth.jwtAuthMiddleware, petController.deletePet);
+
+export default router;
