@@ -12,7 +12,7 @@ class User {
     @Column()
     password: string;
 
-    @BeforeInsert() // Este decorator é crucial
+    @BeforeInsert() 
     async hashPassword() {
         this.password = await hash(this.password, 10);
     }

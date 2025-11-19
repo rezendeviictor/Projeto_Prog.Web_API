@@ -1,4 +1,4 @@
-// CORREÇÃO 1: Importar o model correto (estava importando pet.model)
+
 import User from "../../models/user.model"; 
 import { Response, Request } from "express";
 
@@ -40,8 +40,7 @@ describe('User With TypeORM Controller', () => {
 
     describe('getUsers', () => {
         it('should return a list of users', async () => {
-            // CORREÇÃO 2: Criar instâncias e atribuir valores manualmente,
-            // pois a classe User não tem construtor com argumentos.
+
             const user1 = new User();
             user1.username = "user1";
             user1.password = "pass1";
@@ -65,7 +64,7 @@ describe('User With TypeORM Controller', () => {
 
     describe('getUserByUsername', () => {
         it('should return a user when found', async () => {
-            // CORREÇÃO 2 (Repetição): Instanciação correta
+
             const mockUser = new User();
             mockUser.username = "testuser";
             mockUser.password = "password";
@@ -95,7 +94,6 @@ describe('User With TypeORM Controller', () => {
             const newUser = { username: 'newuser', password: 'newpassword' };
             const savedUser = { id: 1, ...newUser };
             
-            // Aqui usamos 'as User' para forçar a tipagem, o que é aceitável em mocks
             mockRepository.create.mockReturnValue(newUser as User);
             mockRepository.save.mockResolvedValue(savedUser);
 

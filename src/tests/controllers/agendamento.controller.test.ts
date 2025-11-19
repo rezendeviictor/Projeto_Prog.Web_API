@@ -1,10 +1,9 @@
 import Agendamento from "../../models/agendamento.model";
 import { Response, Request } from "express";
 
-// Mock do repositório
 const mockRepository = {
     find: jest.fn(),
-    findOne: jest.fn(), // Usamos findOne por causa das 'relations'
+    findOne: jest.fn(), 
     findOneBy: jest.fn(),
     create: jest.fn(),
     save: jest.fn(),
@@ -12,7 +11,7 @@ const mockRepository = {
     merge: jest.fn()
 }
 
-// Mock do DataSource
+
 jest.mock('../../datasource', () => ({
     AppDataSource: {
             getRepository: jest.fn(() => mockRepository)
@@ -21,7 +20,7 @@ jest.mock('../../datasource', () => ({
 
 import agendamentoController from "../../controllers/agendamento.controller";
 
-// Helper para criar mocks de Request e Response
+
 const mockRequestResponse = (reqOverrides: Partial<Request> = {}) => {
     const req: Partial<Request> = {
         params: {},
@@ -109,7 +108,7 @@ describe('Agendamento Controller', () => {
             
             mockRepository.findOneBy.mockResolvedValue(existingAgendamento);
             
-            // O controller atualiza o objeto 'existingAgendamento'
+          
             const updatedAgendamento = { ...existingAgendamento, ...updatedData };
             mockRepository.save.mockResolvedValue(updatedAgendamento);
 
@@ -117,7 +116,7 @@ describe('Agendamento Controller', () => {
             await agendamentoController.updateAgendamento(req, res);
 
             expect(mockRepository.findOneBy).toHaveBeenCalledWith({ "id_agendamento": 1 });
-            expect(mockRepository.save).toHaveBeenCalledWith(updatedAgendamento); // Verifica se o save foi chamado com o objeto modificado
+            expect(mockRepository.save).toHaveBeenCalledWith(updatedAgendamento); 
             expect(res.status).toHaveBeenCalledWith(200);
             expect(res.json).toHaveBeenCalledWith(updatedAgendamento);
         });

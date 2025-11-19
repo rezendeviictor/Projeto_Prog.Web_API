@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
 import { AppDataSource } from "../datasource";
 import { compare } from "bcrypt";
-import User from "../models/user.model"; // Importando User, sem .js
+import User from "../models/user.model";
 
 dotenv.config();
 
@@ -26,7 +26,6 @@ async function basicAuthMiddleware(req: Request, res: Response, next: NextFuncti
    
    const [authUser, authPass] = authCredential.split(':');
 
-   // Garanta que estamos pegando o repositório de USER
    const repository = AppDataSource.getRepository(User);
    
    const user = await repository.findOneBy({"username": String(authUser)});

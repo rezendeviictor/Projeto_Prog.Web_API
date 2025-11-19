@@ -1,11 +1,11 @@
-// src/datasource.ts
+
 import "reflect-metadata"
-import { DataSource } from "typeorm" // ADICIONE ESTA LINHA
+import { DataSource } from "typeorm" 
 import dotenv from "dotenv";
-import Pet from './models/pet.model'; // ADICIONE .js
-import Servico from './models/servico.model'; // ADICIONE .js
-import Agendamento from './models/agendamento.model'; // ADICIONE .js
-import User from './models/user.model'; // ADICIONE .js
+import Pet from './models/pet.model'; 
+import Servico from './models/servico.model'; 
+import Agendamento from './models/agendamento.model'; 
+import User from './models/user.model'; 
 
 dotenv.config();
 
@@ -17,6 +17,6 @@ export const AppDataSource = new DataSource({
     password: process.env.DATABASE_PASS,
     database: String(process.env.DATABASE_NAME),
     synchronize: true,
-    entities: [User, Pet, Servico, Agendamento], // Esta linha estava correta
+    entities: [User, Pet, Servico, Agendamento], 
     migrations: ['src/migrations/*.ts']
 });

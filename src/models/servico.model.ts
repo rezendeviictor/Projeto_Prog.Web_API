@@ -7,10 +7,10 @@ class Servico {
     id_servico: number;
 
     @Column()
-    nome: string; // Baseado no corpo do POST da documentação [cite: 205]
+    nome: string; 
 
     @Column({ nullable: true })
-    descricao: string; // Baseado no corpo do POST da documentação [cite: 205]
+    descricao: string; 
 
     @Column("decimal", { precision: 10, scale: 2 })
     preco: number;

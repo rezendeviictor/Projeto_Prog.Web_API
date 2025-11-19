@@ -1,7 +1,7 @@
 import { Column, Entity, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, OneToMany } from 'typeorm'
 import Agendamento from './agendamento.model';
 
-@Entity("pets") // Define o nome da tabela
+@Entity("pets") 
 class Pet {
     @PrimaryGeneratedColumn()
     id_pet: number;

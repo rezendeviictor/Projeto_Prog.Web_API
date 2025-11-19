@@ -11,7 +11,7 @@ const mockRepository = {
     merge: jest.fn()
 }
 
-// Mock do DataSource para injetar o repositório mockado
+
 jest.mock('../../datasource', () => ({
     AppDataSource: {
             getRepository: jest.fn(() => mockRepository)
@@ -20,7 +20,7 @@ jest.mock('../../datasource', () => ({
 
 import servicoController from "../../controllers/servico.controller";
 
-// Helper para criar mocks de Request e Response
+
 const mockRequestResponse = (reqOverrides: Partial<Request> = {}) => {
     const req: Partial<Request> = {
         params: {},

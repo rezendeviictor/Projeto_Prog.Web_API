@@ -14,7 +14,7 @@ class Agendamento {
     id_servico: number;
 
     @Column()
-    data_hora: Date; // A documentação sugere string[cite: 41], mas Date é melhor para queries
+    data_hora: Date; 
 
     @Column({ default: 'Agendado' })
     status: string;
@@ -26,11 +26,11 @@ class Agendamento {
     atualizadoEm: Date;
 
     @ManyToOne(() => Pet, (pet) => pet.agendamentos)
-    @JoinColumn({ name: "id_pet" }) // Especifica a coluna da FK
+    @JoinColumn({ name: "id_pet" }) 
     pet: Pet;
 
     @ManyToOne(() => Servico, (servico) => servico.agendamentos)
-    @JoinColumn({ name: "id_servico" }) // Especifica a coluna da FK
+    @JoinColumn({ name: "id_servico" }) 
     servico: Servico;
 }
 

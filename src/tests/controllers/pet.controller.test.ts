@@ -73,5 +73,5 @@ describe('Pet Controller', () => {
         });
     });
 
-    // Adicione testes para createPet, updatePet, getPet
+
 });

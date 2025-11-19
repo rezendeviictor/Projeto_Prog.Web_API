@@ -3,8 +3,8 @@ import swaggerAutogen from "swagger-autogen";
 const config = {
   info: {
     version: 'v1.0.0',
-    title: 'Documentação da API Agendamento Petshop', // [cite: 2]
-    description: 'Esta API gerencia agendamentos de um Petshop, permitindo cadastrar, consultar, atualizar e excluir informações sobre pets, serviços e agendamentos.' // [cite: 4]
+    title: 'Documentação da API Agendamento Petshop',
+    description: 'Esta API gerencia agendamentos de um Petshop, permitindo cadastrar, consultar, atualizar e excluir informações sobre pets, serviços e agendamentos.' 
   },
   host: 'localhost:5000', // 
   basePath: '/api', // 
@@ -12,9 +12,9 @@ const config = {
   tags: [
     { name: "Auth", description: "Authentication endpoints" },
     { name: "User", description: "User endpoints" },
-    { name: "Pets", description: "Recurso: Pets" }, // [cite: 26]
-    { name: "Servicos", description: "Recurso: Servicos" }, // [cite: 32]
-    { name: "Agendamentos", description: "Recurso: Agendamentos" } // [cite: 38]
+    { name: "Pets", description: "Recurso: Pets" },
+    { name: "Servicos", description: "Recurso: Servicos" }, 
+    { name: "Agendamentos", description: "Recurso: Agendamentos" } 
   ],
   securityDefinitions: {
     JWT: {
@@ -25,7 +25,7 @@ const config = {
     }
   },
   definitions: {
-    // PET [cite: 29, 108]
+    // PET
     PetSchema: {
       $nome: "Rex",
       $tutor: "João Silva",
@@ -57,7 +57,7 @@ const config = {
       $criadoEm: "2025-09-01T10:00:00Z",
       $atualizadoEm: "2025-09-01T10:00:00Z"
     },
-    // SERVIÇO [cite: 35, 205]
+    // SERVIÇO
     ServicoSchema: {
       $nome: "Banho",
       descricao: "Banho completo com shampoo especial",
@@ -71,14 +71,14 @@ const config = {
       $criadoEm: "2025-09-01T10:00:00Z",
       $atualizadoEm: "2025-09-01T10:00:00Z"
     },
-    // AGENDAMENTO [cite: 41, 302]
+    // AGENDAMENTO
     AgendamentoSchema: {
       $id_pet: 1,
       $id_servico: 1,
       $data_hora: "2025-10-05T14:00:00Z",
       status: "Agendado"
     },
-    AgendamentoUpdateSchema: { // Para o PUT [cite: 334, 335]
+    AgendamentoUpdateSchema: { // Para o PUT 
       data_hora: "2025-10-06T10:00:00Z",
       status: "Confirmado"
     },
@@ -91,7 +91,7 @@ const config = {
       $criadoEm: "2025-10-01T10:00:00Z",
       $atualizadoEm: "2025-10-01T10:00:00Z"
     },
-    // USER e AUTH (Mantidos do original)
+    // USER e AUTH 
     UserSchema: {
       $username: "usuario.teste",
       $password: "senha123"

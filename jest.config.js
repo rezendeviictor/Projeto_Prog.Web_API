@@ -16,10 +16,9 @@ module.exports = {
   transform: {
     ...tsJestTransformCfg,
   },
-  // --- ADIÇÃO IMPORTANTE ABAIXO ---
+
   moduleNameMapper: {
-    // Quando encontrar um import terminando em .js, remove a extensão
-    // para que o ts-jest encontre o arquivo .ts correspondente
+
     '^(\\.{1,2}/.*)\\.js$': '$1',
   },
 };

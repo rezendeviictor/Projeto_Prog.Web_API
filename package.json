@@ -1,5 +1,5 @@
 {
-  "name": "fatecare-api",
+  "name": "pet-api",
   "version": "1.0.0",
   "description": "Projeto da Disciplina de 'Programação Web' do curso de ADS da Fatec de Ribeirão Preto - SP",
   "main": "index.js",
@@ -13,13 +13,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/edcaraujo/course-pw-fatec-20252-project.git"
+    "url": "git+https://github.com/rezendeviictor/Projeto_Prog.Web_API.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/edcaraujo/course-pw-fatec-20252-project/issues"
+    "url": "https://github.com/rezendeviictor/Projeto_Prog.Web_API/issues"
   },
   "homepage": "https://github.com/edcaraujo/course-pw-fatec-20252-project#readme",
   "dependencies": {

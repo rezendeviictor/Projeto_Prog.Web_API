@@ -17,8 +17,8 @@ app.get("/status", (req: Request, res: Response) => {
     });
 });
 
-// Altera a base da rota
-app.use("/api", routers); // 
+
+app.use("/api", routers); 
 app.use("/docs", swagger.serve, swagger.setup(swaggerConfig));
 
 
