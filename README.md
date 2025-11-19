@@ -33,5 +33,21 @@ API RESTful para gerenciamento de pets, serviços e agendamentos, utilizando **N
 ### 1. Instalar dependências
 ```sh
 npm install
-=======
+```
 
+### 2. Subir o container para receber o Banco de Dados
+```sh
+docker-compose up -d db=
+```
+
+### 3. Executar a API
+```sh
+npm run dev
+```
+
+### 4. Para rodar os testes, caso a API esteja rodando, primeiro: `Ctrl + C`
+após encerrar a execuçao:
+```sh
+npm test
+```
+OBS: Caso a API já estiver encerrada, execute apenas o `npm test`
