@@ -1,7 +1,7 @@
 {
   "name": "pet-api",
   "version": "1.0.0",
-  "description": "Projeto da Disciplina de 'Programação Web' do curso de ADS da Fatec de Ribeirão Preto - SP",
+  "description": "Projeto API PetShop - Disciplina Programação WEB - FATEC-Ribeirão Preto",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon --exec ts-node src/server.ts",
@@ -21,7 +21,7 @@
   "bugs": {
     "url": "https://github.com/rezendeviictor/Projeto_Prog.Web_API/issues"
   },
-  "homepage": "https://github.com/edcaraujo/course-pw-fatec-20252-project#readme",
+  "homepage": "https://github.com/rezendeviictor/Projeto_Prog.Web_API/blob/main/README.md",
   "dependencies": {
     "bcrypt": "^6.0.0",
     "dotenv": "^17.2.1",
