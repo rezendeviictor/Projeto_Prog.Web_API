@@ -51,3 +51,5 @@ após encerrar a execuçao:
 npm test
 ```
 OBS: Caso a API já estiver encerrada, execute apenas o `npm test`
+
+### 5. Para acessar o Swagger: `http://localhost:5000/docs`
